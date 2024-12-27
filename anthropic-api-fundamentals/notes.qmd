@@ -1,0 +1,59 @@
+---
+title: "Notes on Anthropic's API Fundamentals"
+---
+
+# Anthropic's API
+
+## Storing API keys
+
+- You can use `load_dotenv()` from the `python-dotenv` package to load your API keys from a `.env` file located in the same directory as your script.
+- Alternatively, you can store it as a variable for use across notebooks within the IPython store via `%store API_KEY` after setting the variable (as `API_KEY` in that example).
+
+## Messages
+
+- There are two required keys in a message: `role` and `content`.
+- The role can be `user` or `assistant`.
+- You must always alternate between user and assistant messages. This is useful for context preservation which is through the entire conversation history.
+    - It's also useful for putting words in Claude's mouth which moves the conversation in a sepcific direction.
+- You must always start with a user message.
+
+## Message structure
+
+- It has an id, concent, model, role, stop_reason, stop_sequence, type, and usage.
+* `id` - a unique object identifier
+* `type` - The object type, which will always be "message"
+* `role` - The conversational role of the generated message. This will always be "assistant".
+* `model` - The model that handled the request and generated the response
+* `stop_reason` - The reason the model stopped generating.  We'll learn more about this later.
+* `stop_sequence` - We'll learn more about this shortly.
+* `usage` - information on billing and rate-limit usage. Contains information on:
+    * `input_tokens` - The number of input tokens that were used.
+    * `output_tokens` - The number of output tokens that were used.
+ 
+## Directing the conversation
+
+- You can direct the conversation by providing a user and assistant message. Claude will try to finish the assistant message. This is a great way to direct the conversation in a specific direction by faking part of the the assistant message (response).
+
+## Few shot 
+
+- A similar concept applies to few-shot learning. You can provide a few examples of the task you want the model to perform. 
+- This can be done passed list of user and assistant messages. This can help the model understand the task better and provide more accurate responses.
+- This can help the model understand the task better and provide more accurate responses.
+
+## Required paramters
+
+- model
+- max_tokens
+- messages
+
+## Optional parameters
+
+- stop sequences
+    - useful for stopping the model from generating more tokens once it reaches a certain point. 
+    - for example, you could ask for a JSON response and pass the closing tag as a stop sequence to stop the model from generating more tokens after the closing tag is generated.
+    - you can pass a list of strings as stop sequences.
+- temperature
+    - has a default value of 1 and a range of 0 to 1
+    - lower values make the model more deterministic and higher values make it more random.
+- system prompt
+    - provides high level instructions or guidelines to the model.
