@@ -1,0 +1,48 @@
+---
+title: "Notes on Anthropic's Claude 101"
+subtitle: https://anthropic.skilljar.com/claude-101
+---
+
+## Claude as an AI assistant designed to be your thinking partner
+
+> "Think of Claude as a thought partner who can help you tackle complex problems, and work through challenging situations, not just answer simple questions."
+
+## Delegation-diligence loop
+
+- The delegation-diligence loop is a process of delegating tasks to Claude and then checking the results for accuracy and completeness.
+- You should do this on an analysis that you've done yourself to see how well Claude can replicate your thinking process and where it might go wrong.
+- This is the simple eval approach that folks can use to evaluate the performance of Claude on a specific task. 
+    - It involves doing a lot of manual work to check the results for accuracy and completeness, but it can be a useful way to get a sense of how well Claude is performing on a specific task.
+
+## Skills
+
+> "Skills are procedural machines. They encode how Claude should execute a task—the specific steps, order of operations, and methodology you want followed every time. Skills shine when you have repeatable workflows you want Claude to run consistently."
+
+### Security considerations
+
+Because Skills can include executable code, it's important to use them thoughtfully:
+
+- Only install custom Skills from trusted sources
+- Anthropic's built-in Skills are tested and maintained by Anthropic
+- Custom Skills you upload are private to your individual account
+- If you're installing a custom Skill from an external source, review its contents before use to understand what it does.
+
+## Claude extension for Chrome
+
+- https://chromewebstore.google.com/publisher/anthropic/u308d63ea0533efcf7ba778ad42da7390
+- https://code.claude.com/docs/en/chrome
+
+> "Claude Code integrates with the Claude in Chrome browser extension to give you browser automation capabilities from the CLI or the VS Code extension. Build your code, then test and debug in the browser without switching contexts."
+
+## Claude connectors
+
+- https://www.anthropic.com/news/claude-for-creative-work
+
+> "Connectors allow Claude to access other platforms and tools directly. We are adding several new connectors that are designed to make it easier to use Claude for creative work"
+
+## Enterprise search
+
+- https://support.claude.com/en/articles/12489464-use-enterprise-search
+
+> "When you ask a question within your organization’s dedicated project, Claude searches across all your connected data sources to generate comprehensive, well-cited responses."
+- Must be setup by admin
